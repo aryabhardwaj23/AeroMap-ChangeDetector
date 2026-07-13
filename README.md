@@ -84,6 +84,8 @@ Image B (After)  ──┘         │                                          
 
 [LEVIR-CD](https://justchenhao.github.io/LEVIR/) is a large-scale building change detection dataset: 637 bi-temporal high-resolution Google Earth image pairs (0.5 m/pixel GSD) collected between 2002 and 2018. The HuggingFace version used here (`ericyu/LEVIRCD_Cropped_256`) contains **2048 pre-cropped 256×256 test pairs** with pixel-level ground truth masks.
 
+<img width="1467" height="831" alt="Screenshot 2026-07-14 at 9 39 50 am" src="https://github.com/user-attachments/assets/5afab435-d096-4ecc-825b-c418cc77ba7b" />
+
 ---
 
 ## Run Locally
@@ -108,8 +110,12 @@ Model weights (164 MB) and LEVIR-CD dataset (~150 MB) download automatically fro
 ### Mode 1 — LEVIR-CD test set
 Select any of the 2048 test pairs with the slider. Pair **#260** (vacant land → full residential estate) and **#1700** are the most visually dramatic.
 
+<img width="1469" height="830" alt="Screenshot 2026-07-14 at 9 39 18 am" src="https://github.com/user-attachments/assets/0743ed67-273b-4e60-9582-9fa19f8dbdf1" />
+
 ### Mode 2 — Upload your own pair
 Upload two aerial images of the **same location** at different times (Google Earth historical imagery works well). ChangeFormer handles size normalisation and is robust to seasonal variation.
+
+<img width="1470" height="830" alt="Screenshot 2026-07-14 at 9 41 41 am" src="https://github.com/user-attachments/assets/1c9e8eb6-e9c6-4602-bb52-45171935b00e" />
 
 ---
 
