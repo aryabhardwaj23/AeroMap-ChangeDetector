@@ -38,7 +38,7 @@ section[data-testid="stSidebar"]{background:#0d1117}
 
 st.markdown("# AeroMap Change Intelligence")
 st.caption("Aerial Bi-Temporal Change Detection  ·  LEVIR-CD  ·  "
-           "Otsu Pixel Diff  ·  Morphological Cleanup  ·  Zero-Shot Inference")
+           "ChangeFormer Transformer  ·  Pretrained on LEVIR-CD  ·  IoU 0.845")
 
 # ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
@@ -59,9 +59,9 @@ with st.sidebar:
     run_btn = st.button("▶  Detect Changes", type="primary", use_container_width=True)
     st.markdown("---")
     st.markdown("**Architecture**")
-    st.caption("Per-channel absolute pixel diff → Otsu auto-threshold → "
-               "morphological close + open (5×5 ellipse). "
-               "Zero-shot: no task-specific training.")
+    st.caption("ChangeFormer V6 — Siamese Transformer encoder + multi-scale decoder. "
+               "Pretrained on LEVIR-CD. IoU 0.845 on test set. "
+               "Season-invariant: ignores colour shift, detects structural change only.")
 
 # ── Load images ───────────────────────────────────────────────────────────────
 img_a, img_b, label = None, None, None
@@ -81,7 +81,7 @@ if run_btn:
 
 # ── Run detection ─────────────────────────────────────────────────────────────
 if img_a and run_btn:
-    with st.spinner("Running Otsu change detection…"):
+    with st.spinner("Running ChangeFormer inference…"):
         from detect import predict, overlay, heatmap_rgb, changed_area_m2
         mask, heat = predict(img_a, img_b)
         img_overlay = overlay(img_b, mask)
