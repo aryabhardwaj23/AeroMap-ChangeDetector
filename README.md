@@ -150,10 +150,4 @@ Model weights hosted at [arya2323/changeformer-levir-cd](https://huggingface.co/
 
 ---
 
-## Related Projects
-
-- [AeroMap-Edge](https://github.com/aryabhardwaj23/AeroMap-Edge) — Real-time drone inspection: YOLO11n detection + Depth Anything V2 metric depth + ORB visual odometry
-
----
-
 <p align="center">Built for drone-company portfolios · Tested on Apple M3 · CPU/MPS inference</p>
