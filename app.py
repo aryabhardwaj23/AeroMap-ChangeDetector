@@ -6,16 +6,16 @@ Run:  streamlit run app.py
 """
 
 import io, os, sys
-from pathlib import Path
 import numpy as np
 import streamlit as st
 from PIL import Image
 
-PARQUET = str(Path.home() / ".cache/huggingface/hub/"
-              "datasets--ericyu--LEVIRCD_Cropped_256/snapshots/"
-              "70f91f6cc678c6c64516b37a48ec1374e2d52a5b/data/"
-              "test-00000-of-00001-31d7c3e3444e5b5d.parquet")
-N_TEST  = 2048
+N_TEST = 2048
+
+@st.cache_resource(show_spinner=False)
+def _parquet_path():
+    from detect import get_parquet_path
+    return get_parquet_path()
 
 # ── Page ──────────────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -68,12 +68,9 @@ img_a, img_b, label = None, None, None
 
 if run_btn:
     if mode == "LEVIR-CD test set":
-        if not os.path.exists(PARQUET):
-            st.error("LEVIR-CD parquet not found. Run download step first.")
-            st.stop()
-        with st.spinner("Loading pair…"):
-            from detect import load_pair_from_parquet
-            img_a, img_b, label = load_pair_from_parquet(PARQUET, pair_idx)
+        with st.spinner("Loading dataset (first run downloads ~150 MB)…"):
+            from detect import load_pair_from_parquet, get_parquet_path
+            img_a, img_b, label = load_pair_from_parquet(_parquet_path(), pair_idx)
     else:
         if up_a and up_b:
             img_a = Image.open(io.BytesIO(up_a.read())).convert("RGB")
