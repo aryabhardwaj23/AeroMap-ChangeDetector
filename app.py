@@ -105,7 +105,7 @@ if img_a and run_btn:
     c1.metric("Changed Area",   f"{area_m2:,.0f} m²")
     c2.metric("Site Coverage",  f"{pct_change:.1f}%")
     c3.metric("IoU vs GT",      iou_str)
-    c4.metric("Threshold",      "Auto (Otsu)")
+    c4.metric("Threshold",      "0.5 (ChangeFormer)")
 
     st.markdown("---")
 
@@ -146,7 +146,7 @@ if img_a and run_btn:
     Bi-temporal aerial comparison detected <b style='color:#ff6b6b'>{area_m2:,.0f} m²</b>
     of structural change ({pct_change:.1f}% of surveyed area).
     {"Ground truth IoU: <b style='color:#00ff9f'>" + iou_str + "</b> — change boundaries validated against survey annotations." if label is not None else ""}
-    Model: pixel diff → Otsu auto-threshold → morphological cleanup (5×5 ellipse).
+    Model: ChangeFormer V6 · Siamese Transformer · pretrained LEVIR-CD · threshold 0.5.
     </span>
     </div>
     """, unsafe_allow_html=True)
