@@ -27,6 +27,14 @@
 
 ---
 
+## Try it Live
+
+**No installation needed** → [🚀 Open the live demo](https://aeromap-changedetector-edroxqbw6tk2w4wvtsfwce.streamlit.app/)
+
+Select a test pair from the sidebar and click **▶ Detect Changes**. Pair **#260** is the most dramatic.
+
+---
+
 ## What it does
 
 Upload two aerial images of the same location taken at different times. The pipeline computes pixel-level change, thresholds it automatically using Otsu's method, cleans up noise with morphological filters, and renders:
@@ -66,14 +74,6 @@ Image B (After)  ──┘                                                      
 ## Dataset — LEVIR-CD
 
 [LEVIR-CD](https://justchenhao.github.io/LEVIR/) is a large-scale building change detection dataset: 637 bi-temporal high-resolution Google Earth image pairs (0.5 m/pixel GSD) collected between 2002 and 2018. The HuggingFace version used here (`ericyu/LEVIRCD_Cropped_256`) contains **2048 pre-cropped 256×256 test pairs** with pixel-level ground truth masks.
-
----
-
-## Try it Live
-
-**No installation needed** → [🚀 Open the live demo](https://aeromap-changedetector-edroxqbw6tk2w4wvtsfwce.streamlit.app/)
-
-Select a test pair from the sidebar and click **▶ Detect Changes**. Pair **#260** is the most dramatic.
 
 ---
 
