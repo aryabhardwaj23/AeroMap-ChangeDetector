@@ -69,29 +69,28 @@ Image B (After)  ──┘                                                      
 
 ---
 
-## Quick Start
+## Try it Live
+
+**No installation needed** → [🚀 Open the live demo](https://aeromap-changedetector-edroxqbw6tk2w4wvtsfwce.streamlit.app/)
+
+Select a test pair from the sidebar and click **▶ Detect Changes**. Pair **#260** is the most dramatic.
+
+---
+
+## Run Locally
 
 ```bash
-# 1. Clone
 git clone https://github.com/aryabhardwaj23/AeroMap-ChangeDetector.git
 cd AeroMap-ChangeDetector
 
-# 2. Create venv and install
 python3 -m venv venv
 source venv/bin/activate
-pip install streamlit pillow opencv-python-headless pyarrow torch torchvision
+pip install -r requirements.txt
 
-# 3. (Optional) Download LEVIR-CD test set — ~150 MB
-python3 -c "
-from huggingface_hub import snapshot_download
-snapshot_download('ericyu/LEVIRCD_Cropped_256', repo_type='dataset')
-"
-
-# 4. Run
 streamlit run app.py
 ```
 
-Open **http://localhost:8501** in your browser.
+The LEVIR-CD dataset (~150 MB) downloads automatically from HuggingFace on first run.
 
 ---
 
