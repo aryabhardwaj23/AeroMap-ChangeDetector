@@ -6,6 +6,12 @@
 </p>
 
 <p align="center">
+  <a href="https://aeromap-changedetector-edroxqbw6tk2w4wvtsfwce.streamlit.app/">
+    <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Streamlit-FF4B4B?style=for-the-badge"/>
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white"/>
   <img src="https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white"/>
   <img src="https://img.shields.io/badge/OpenCV-4.x-5C3EE8?logo=opencv&logoColor=white"/>
