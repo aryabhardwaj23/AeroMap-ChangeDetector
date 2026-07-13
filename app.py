@@ -84,7 +84,7 @@ if img_a and run_btn:
     with st.spinner("Running ChangeFormer inference…"):
         from detect import predict, overlay, heatmap_rgb, changed_area_m2
         mask, heat = predict(img_a, img_b)
-        img_overlay = overlay(img_b, mask)
+        img_overlay = overlay(img_b, mask, color=(0, 255, 180))
         img_heat    = heatmap_rgb(heat)
 
     area_m2   = changed_area_m2(mask, gsd_m=gsd)
@@ -105,7 +105,7 @@ if img_a and run_btn:
     c1.metric("Changed Area",   f"{area_m2:,.0f} m²")
     c2.metric("Site Coverage",  f"{pct_change:.1f}%")
     c3.metric("IoU vs GT",      iou_str)
-    c4.metric("Threshold",      "0.5 (ChangeFormer)")
+    c4.metric("Threshold",      "0.5 · CF-V6")
 
     st.markdown("---")
 

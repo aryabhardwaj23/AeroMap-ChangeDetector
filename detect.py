@@ -65,7 +65,7 @@ def predict(img_a: Image.Image, img_b: Image.Image) -> tuple[np.ndarray, np.ndar
 
 
 def overlay(img: Image.Image, mask: np.ndarray,
-            color=(255, 60, 60), alpha=0.55) -> Image.Image:
+            color=(0, 255, 180), alpha=0.6) -> Image.Image:
     h, w = mask.shape[:2]
     if img.size != (w, h):
         img = img.resize((w, h), Image.BILINEAR)
